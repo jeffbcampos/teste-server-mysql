@@ -4,10 +4,10 @@ const mysql = require('mysql')
 const app = express()
 
 const connection = mysql.createConnection({
-    host: 'aws.connect.psdb.cloud',
-    user: 'tb18o64xbveul6u8w6kc',
-    password: 'pscale_pw_AZAm2k4olEBvP5V5VW1aJAzq6LtK1EO1wolBfpefHF6',
-    database: 'rec',
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    database: process.env.DB_NAME,
     ssl: {"rejectUnauthorized":true}
 })
 
